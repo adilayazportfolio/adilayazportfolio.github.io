@@ -1,657 +1,385 @@
-    
-<!DOCTYPE HTML>
-<!--
-	Base template: Strongly Typed by HTML5 UP (html5up.net | @ajlkn)
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-	Content, copy and custom component styling: Aadil Ayaz portfolio edition
--->
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Aadil Ayaz | Canva Creator Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Aadil Ayaz — Graphic Designer, Canva Template Creator and Brand Identity Designer based in Karachi, Pakistan. Modern, clean, and premium Canva templates, branding systems, presentations and social media designs." />
-		<meta name="author" content="Aadil Ayaz" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-
-		<!-- Portfolio-specific refinements (additive only — does not remove or override base template classes) -->
-		<style>
-			body, input, textarea, select { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-			h1, h2, h3, h4, #logo a, .hero-sub, .section-label { font-family: 'Poppins', 'Inter', sans-serif; }
-
-			.section-label {
-				display: inline-block;
-				font-size: 0.75rem;
-				letter-spacing: 0.25em;
-				text-transform: uppercase;
-				opacity: 0.55;
-				margin-bottom: 0.75rem;
-				font-weight: 500;
-			}
-
-			.hero-sub {
-				font-size: 1.05rem;
-				letter-spacing: 0.06em;
-				text-transform: uppercase;
-				opacity: 0.75;
-				margin: 0.5em 0 1.25em 0;
-				font-weight: 500;
-			}
-
-			.hero-intro {
-				max-width: 46em;
-				margin: 0 auto 1.75em auto;
-				font-size: 1.05em;
-				line-height: 1.8;
-				opacity: 0.85;
-			}
-
-			.aln-center { text-align: center; }
-			.aln-center .actions { justify-content: center; }
-
-			/* Skills */
-			.skills-grid {
-				display: flex;
-				flex-wrap: wrap;
-				margin: 0 -0.75em;
-			}
-			.skill-card {
-				box-sizing: border-box;
-				width: 20%;
-				padding: 0.75em;
-			}
-			.skill-card-inner {
-				height: 100%;
-				padding: 1.75em 1.25em;
-				border-radius: 8px;
-				background: rgba(255,255,255,0.035);
-				border: solid 1px rgba(255,255,255,0.08);
-				text-align: center;
-				transition: transform 0.3s ease, background 0.3s ease;
-			}
-			.skill-card-inner:hover { transform: translateY(-4px); background: rgba(255,255,255,0.06); }
-			.skill-card-inner .icon-wrap {
-				font-size: 1.5rem;
-				margin-bottom: 0.6em;
-				opacity: 0.9;
-			}
-			.skill-card-inner h4 {
-				margin: 0 0 0.6em 0;
-				font-size: 0.95em;
-				letter-spacing: 0.02em;
-			}
-			.skill-bar-track {
-				width: 100%;
-				height: 6px;
-				border-radius: 4px;
-				background: rgba(255,255,255,0.08);
-				overflow: hidden;
-			}
-			.skill-bar-fill {
-				height: 100%;
-				border-radius: 4px;
-				background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.4));
-			}
-
-			/* Portfolio */
-			.portfolio-grid { display: flex; flex-wrap: wrap; margin: 0 -0.75em; }
-			.portfolio-card { box-sizing: border-box; width: 50%; padding: 0.75em; }
-			.portfolio-thumb {
-				position: relative;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				height: 12em;
-				border-radius: 8px 8px 0 0;
-				color: rgba(255,255,255,0.85);
-				font-size: 1.9rem;
-				background: linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.03));
-			}
-			.portfolio-card-body {
-				padding: 1.25em 1.4em 1.5em 1.4em;
-				border: solid 1px rgba(255,255,255,0.08);
-				border-top: none;
-				border-radius: 0 0 8px 8px;
-				background: rgba(255,255,255,0.02);
-			}
-			.portfolio-card-body .cat-label {
-				font-size: 0.7rem;
-				letter-spacing: 0.15em;
-				text-transform: uppercase;
-				opacity: 0.5;
-				display: block;
-				margin-bottom: 0.4em;
-			}
-			.portfolio-card-body h3 { margin: 0 0 0.4em 0; font-size: 1.05em; }
-			.portfolio-card-body p { margin: 0; font-size: 0.92em; opacity: 0.75; line-height: 1.7; }
-
-			/* Why work with me — reused sidebar excerpt/highlight structures */
-			#sidebar .box.excerpt header .icon-badge,
-			#sidebar .box.highlight header .icon-badge {
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				width: 1.9em;
-				height: 1.9em;
-				border-radius: 50%;
-				background: rgba(255,255,255,0.08);
-				margin-right: 0.5em;
-				font-size: 0.85em;
-				vertical-align: middle;
-			}
-
-			.about-portrait {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				height: 100%;
-				min-height: 16em;
-				border-radius: 10px;
-				background: linear-gradient(160deg, rgba(255,255,255,0.14), rgba(255,255,255,0.02));
-				font-size: 3rem;
-				opacity: 0.85;
-			}
-
-			@media screen and (max-width: 980px) {
-				.skill-card { width: 33.333%; }
-			}
-			@media screen and (max-width: 736px) {
-				.skill-card { width: 50%; }
-				.portfolio-card { width: 100%; }
-			}
-		</style>
-	</head>
-	<body class="homepage is-preload">
-		<div id="page-wrapper">
-
-			<!-- Header / Navigation -->
-				<section id="header">
-					<div class="container">
-
-						<!-- Logo -->
-							<h1 id="logo"><a href="#header">Aadil Ayaz</a></h1>
-							<p>Graphic Designer &middot; Canva Template Creator &middot; Brand Identity Designer</p>
-
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a class="icon solid fa-home" href="#header"><span>Home</span></a></li>
-									<li><a class="icon solid fa-user" href="#about"><span>About</span></a></li>
-									<li><a class="icon solid fa-th-large" href="#portfolio"><span>Portfolio</span></a></li>
-									<li><a class="icon solid fa-layer-group" href="#skills"><span>Skills</span></a></li>
-									<li><a class="icon solid fa-envelope" href="#contact"><span>Contact</span></a></li>
-								</ul>
-							</nav>
-
-					</div>
-				</section>
-
-			<!-- Hero -->
-				<section id="features">
-					<div class="container">
-						<header class="aln-center">
-							<span class="section-label">Portfolio</span>
-							<h2>Hi, I&rsquo;m <strong>Aadil Ayaz</strong></h2>
-							<p class="hero-sub">Graphic Designer &nbsp;/&nbsp; Canva Template Creator &nbsp;/&nbsp; Brand Identity Designer</p>
-							<p class="hero-intro">I create modern, clean, and visually engaging Canva templates, branding systems, presentations, social media graphics, and digital marketing assets designed to help businesses and creators communicate with clarity and style.</p>
-							<ul class="actions aln-center">
-								<li><a href="#portfolio" class="button icon solid fa-th-large">View Portfolio</a></li>
-							</ul>
-						</header>
-						<div class="row aln-center">
-							<div class="col-4 col-6-medium col-12-small">
-
-								<!-- Pillar -->
-									<section class="aln-center">
-										<span class="icon solid fa-palette" style="font-size:2rem; opacity:0.85;"></span>
-										<header>
-											<h3>Canva Template Design</h3>
-										</header>
-										<p>Editable, on-trend Canva templates built with clean grids, considered typography and a system that&rsquo;s easy for anyone to customise.</p>
-									</section>
-
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-
-								<!-- Pillar -->
-									<section class="aln-center">
-										<span class="icon solid fa-fingerprint" style="font-size:2rem; opacity:0.85;"></span>
-										<header>
-											<h3>Brand Identity</h3>
-										</header>
-										<p>Logos, colour systems and visual guidelines that give businesses a consistent, recognisable presence across every touchpoint.</p>
-									</section>
-
-							</div>
-							<div class="col-4 col-6-medium col-12-small">
-
-								<!-- Pillar -->
-									<section class="aln-center">
-										<span class="icon solid fa-share-alt" style="font-size:2rem; opacity:0.85;"></span>
-										<header>
-											<h3>Social &amp; Print Design</h3>
-										</header>
-										<p>Social media kits, marketing flyers, menus and presentations designed to look premium in a feed or in print.</p>
-									</section>
-
-							</div>
-						</div>
-					</div>
-				</section>
-
-			<!-- About -->
-				<section>
-					<div class="container" id="about">
-						<div class="row aln-center">
-							<div class="col-7 col-12-medium">
-								<span class="section-label">About Me</span>
-								<h2>Design that&rsquo;s both <strong>beautiful and useful</strong></h2>
-								<p>I&rsquo;m a graphic designer based in Karachi, Pakistan, with a strong focus on Canva template design and brand identity. My interest in design started with a simple question: why should good design be complicated to use? That question still shapes every project I take on.</p>
-								<p>My process starts with understanding the purpose behind a design &mdash; who it&rsquo;s for, what it needs to say, and how it will actually be used &mdash; before a single element is placed. From there, I build around clear grids, considered typography and colour palettes that feel intentional rather than decorative.</p>
-								<p>I care about the details most people scroll past: consistent spacing, aligned elements, and type that&rsquo;s easy to read at a glance. Branding especially excites me, because it&rsquo;s where strategy and visual style meet. My goal with every template, deck or brand system is the same &mdash; make it practical, make it beautiful, and make it effortless for the person using it.</p>
-							</div>
-							<div class="col-5 col-12-medium">
-								<div class="about-portrait">
-									<span class="icon solid fa-user"></span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-			<!-- Banner -->
-				<section id="banner">
-					<div class="container">
-						<p>Great design isn&rsquo;t decoration &mdash; <strong>it&rsquo;s clear communication.</strong></p>
-					</div>
-				</section>
-
-			<!-- Skills -->
-				<section>
-					<div class="container" id="skills">
-						<header class="aln-center">
-							<span class="section-label">Skills</span>
-							<h2>What I bring to a project</h2>
-						</header>
-						<div class="skills-grid">
-
-							<div class="skill-card">
-								<div class="skill-card-inner">
-									<div class="icon-wrap"><span class="icon solid fa-palette"></span></div>
-									<h4>Canva</h4>
-									<div class="skill-bar-track"><div class="skill-bar-fill" style="width:97%;"></div></div>
-								</div>
-							</div>
-
-							<div class="skill-card">
-								<div class="skill-card-inner">
-									<div class="icon-wrap"><span class="icon solid fa-pencil-ruler"></span></div>
-									<h4>Graphic Design</h4>
-									<div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%;"></div></div>
-								</div>
-							</div>
-
-							<div class="skill-card">
-								<div class="skill-card-inner">
-									<div class="icon-wrap"><span class="icon solid fa-fingerprint"></span></div>
-									<h4>Branding</h4>
-									<div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%;"></div></div>
-								</div>
-							</div>
-
-							<div class="skill-card">
-								<div class="skill-card-inner">
-									<div class="icon-wrap"><span class="icon solid fa-font"></span></div>
-									<h4>Typography</h4>
-									<div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%;"></div></div>
-								</div>
-							</div>
-
-							<div class="skill-card">
-								<div class="skill-card-inner">
-									<div class="icon-wrap"><span class="icon solid fa-file-powerpoint"></span></div>
-									<h4>Presentation Design</h4>
-									<div class="skill-bar-track"><div class="skill-bar-fill" style="width:93%;"></div></div>
-								</div>
-							</div>
-
-							<div class="skill-card">
-								<div class="skill-card-inner">
-									<div class="icon-wrap"><span class="icon solid fa-share-alt"></span></div>
-									<h4>Social Media Design</h4>
-									<div class="skill-bar-track"><div class="skill-bar-fill" style="width:94%;"></div></div>
-								</div>
-							</div>
-
-							<div class="skill-card">
-								<div class="skill-card-inner">
-									<div class="icon-wrap"><span class="icon solid fa-print"></span></div>
-									<h4>Print Design</h4>
-									<div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%;"></div></div>
-								</div>
-							</div>
-
-							<div class="skill-card">
-								<div class="skill-card-inner">
-									<div class="icon-wrap"><span class="icon solid fa-th-large"></span></div>
-									<h4>Layout Design</h4>
-									<div class="skill-bar-track"><div class="skill-bar-fill" style="width:93%;"></div></div>
-								</div>
-							</div>
-
-							<div class="skill-card">
-								<div class="skill-card-inner">
-									<div class="icon-wrap"><span class="icon solid fa-swatchbook"></span></div>
-									<h4>Visual Identity</h4>
-									<div class="skill-bar-track"><div class="skill-bar-fill" style="width:91%;"></div></div>
-								</div>
-							</div>
-
-							<div class="skill-card">
-								<div class="skill-card-inner">
-									<div class="icon-wrap"><span class="icon solid fa-tint"></span></div>
-									<h4>Colour Theory</h4>
-									<div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%;"></div></div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</section>
-
-			<!-- Main: Portfolio + Why Work With Me -->
-				<section id="main">
-					<div class="container" id="portfolio">
-						<header class="aln-center">
-							<span class="section-label">Portfolio</span>
-							<h2>Selected Work</h2>
-						</header>
-						<div class="row">
-
-							<!-- Content -->
-								<div id="content" class="col-8 col-12-medium">
-
-									<div class="portfolio-grid">
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-gem"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Brand Identity</span>
-												<h3>Luxury Brand Identity</h3>
-												<p>A refined logo and visual identity system for a premium lifestyle brand, including colour palette, typography and usage guidelines.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-images"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Social Media</span>
-												<h3>Instagram Carousel Templates</h3>
-												<p>A set of editable Canva carousel templates designed for consistent, scroll-stopping social content.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-file-powerpoint"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Presentation</span>
-												<h3>Business Presentation</h3>
-												<p>A clean, modern slide deck template built for clarity, with a flexible layout system for pitches and reports.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-id-card"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Print / Career</span>
-												<h3>Resume Template</h3>
-												<p>A minimal, professional resume layout designed for readability and easy personalisation in Canva.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-utensils"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Print</span>
-												<h3>Restaurant Menu</h3>
-												<p>An elegant, appetite-driven menu design balancing imagery, pricing and typography for a modern restaurant.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-box-open"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Catalog</span>
-												<h3>Product Catalog</h3>
-												<p>A structured, image-forward catalog template built to present products clearly across multiple pages.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-bullhorn"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Marketing</span>
-												<h3>Marketing Flyer</h3>
-												<p>A bold, high-contrast flyer template designed to promote offers and events with immediate visual impact.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-ticket-alt"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Event</span>
-												<h3>Event Poster</h3>
-												<p>A striking poster template combining strong typographic hierarchy with a clear call to action.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-hashtag"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Social Media</span>
-												<h3>Social Media Kit</h3>
-												<p>A cohesive set of profile, post and story templates giving a brand a consistent look across every platform.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-tshirt"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Editorial</span>
-												<h3>Fashion Lookbook</h3>
-												<p>An editorial-style lookbook layout with generous whitespace and imagery-led pages for a fashion label.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-calendar-alt"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Productivity</span>
-												<h3>Planner Template</h3>
-												<p>A clean, functional daily/weekly planner template designed for everyday productivity and easy customisation.</p>
-											</div>
-										</div>
-
-										<div class="portfolio-card">
-											<div class="portfolio-thumb"><span class="icon solid fa-briefcase"></span></div>
-											<div class="portfolio-card-body">
-												<span class="cat-label">Business</span>
-												<h3>Business Proposal</h3>
-												<p>A polished, persuasive proposal template structured to build trust and guide clients toward a decision.</p>
-											</div>
-										</div>
-
-									</div>
-
-								</div>
-
-							<!-- Sidebar: Why Work With Me -->
-								<div id="sidebar" class="col-4 col-12-medium">
-
-									<header>
-										<span class="section-label">Why Work With Me</span>
-									</header>
-
-									<!-- Quick values -->
-										<section>
-											<ul class="divided">
-												<li>
-
-													<!-- Value -->
-														<article class="box excerpt">
-															<header>
-																<span class="icon-badge icon solid fa-lightbulb"></span>
-																<h3>Creative Thinking</h3>
-															</header>
-															<p>Every project starts with an idea worth solving, not just a template to fill in.</p>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Value -->
-														<article class="box excerpt">
-															<header>
-																<span class="icon-badge icon solid fa-crosshairs"></span>
-																<h3>Attention to Detail</h3>
-															</header>
-															<p>Spacing, alignment and colour are checked and rechecked until everything feels right.</p>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Value -->
-														<article class="box excerpt">
-															<header>
-																<span class="icon-badge icon solid fa-check-circle"></span>
-																<h3>Professional Quality</h3>
-															</header>
-															<p>Reliable communication and polished, on-time delivery, every time.</p>
-														</article>
-
-												</li>
-											</ul>
-										</section>
-
-									<!-- Featured values -->
-										<section>
-											<ul class="divided">
-												<li>
-
-													<!-- Value -->
-														<article class="box highlight">
-															<header>
-																<span class="icon-badge icon solid fa-shapes"></span>
-																<h3>Clean, User-Focused Layouts</h3>
-															</header>
-															<p>I design for the person using the template, not just for how it looks in a preview &mdash; clear structure, sensible hierarchy, and layouts that are genuinely easy to edit and understand.</p>
-														</article>
-
-												</li>
-												<li>
-
-													<!-- Value -->
-														<article class="box highlight">
-															<header>
-																<span class="icon-badge icon solid fa-layer-group"></span>
-																<h3>Consistency Across Every Asset</h3>
-															</header>
-															<p>Colours, fonts and spacing stay consistent across an entire template set or brand system, so everything feels like it belongs together.</p>
-														</article>
-
-												</li>
-											</ul>
-										</section>
-
-								</div>
-
-						</div>
-					</div>
-				</section>
-
-			<!-- Contact -->
-				<section id="footer">
-					<div class="container" id="contact">
-						<header>
-							<h2>Let&rsquo;s create something <strong>great together.</strong></h2>
-							<p>Have a project in mind, a question about a template, or just want to say hello? I&rsquo;d love to hear from you &mdash; I usually reply within a day or two.</p>
-						</header>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<section>
-									<form method="post" action="#">
-										<div class="row gtr-50">
-											<div class="col-6 col-12-small">
-												<input name="name" placeholder="Name" type="text" />
-											</div>
-											<div class="col-6 col-12-small">
-												<input name="email" placeholder="Email" type="text" />
-											</div>
-											<div class="col-12">
-												<textarea name="message" placeholder="Tell me about your project"></textarea>
-											</div>
-											<div class="col-12">
-												<a href="#" class="form-button-submit button icon solid fa-envelope">Send Message</a>
-											</div>
-										</div>
-									</form>
-								</section>
-							</div>
-							<div class="col-6 col-12-medium">
-								<section>
-									<p>Based in Karachi, Pakistan, and available for freelance projects, Canva template collaborations and brand identity work with clients worldwide.</p>
-									<div class="row">
-										<div class="col-6 col-12-small">
-											<ul class="icons">
-												<li class="icon solid fa-map-marker-alt">
-													Karachi, Pakistan
-												</li>
-												<li class="icon solid fa-envelope">
-													<a href="mailto:hello@aadilayaz.design">hello@aadilayaz.design</a>
-												</li>
-												<li class="icon solid fa-briefcase">
-													Available for freelance work
-												</li>
-											</ul>
-										</div>
-										<div class="col-6 col-12-small">
-											<ul class="icons">
-												<li class="icon brands fa-github">
-													<a href="https://github.com/aadilayaz" target="_blank" rel="noopener">github.com/aadilayaz</a>
-												</li>
-												<li class="icon brands fa-behance">
-													<a href="https://behance.net/aadilayaz" target="_blank" rel="noopener">behance.net/aadilayaz</a>
-												</li>
-												<li class="icon brands fa-linkedin-in">
-													<a href="https://linkedin.com/in/aadilayaz" target="_blank" rel="noopener">linkedin.com/in/aadilayaz</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</section>
-							</div>
-						</div>
-					</div>
-					<div id="copyright" class="container">
-						<ul class="links">
-							<li>&copy; 2026 Aadil Ayaz. All Rights Reserved.</li>
-						</ul>
-					</div>
-				</section>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-						</html>														 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aadil Ayaz — Graphic Designer & Canva Template Creator in Karachi</title>
+  <meta name="description" content="Aadil Ayaz is a graphic designer and Canva template creator in Karachi, Pakistan, specialising in brand identity, presentations, social media kits and print design.">
+  <meta name="keywords" content="Aadil Ayaz, graphic designer, Canva template creator, brand identity designer, Karachi designer, Canva creator">
+  <meta name="author" content="Aadil Ayaz">
+  <link rel="canonical" href="https://aadilayaz.design/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aadil Ayaz — Portfolio">
+  <meta property="og:title" content="Aadil Ayaz — Graphic Designer & Canva Template Creator">
+  <meta property="og:description" content="Modern, clean, and premium Canva templates, branding systems, presentations and social media designs. Based in Karachi, Pakistan.">
+  <meta property="og:image" content="assets/images/og-image.svg">
+  <meta property="og:url" content="https://aadilayaz.design/">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aadil Ayaz — Graphic Designer & Canva Template Creator">
+  <meta name="twitter:description" content="Modern, clean, and premium Canva templates, branding systems, presentations and social media designs.">
+  <meta name="twitter:image" content="assets/images/og-image.svg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aadil Ayaz",
+    "jobTitle": ["Graphic Designer", "Canva Template Creator", "Brand Identity Designer"],
+    "url": "https://aadilayaz.design/",
+    "image": "https://aadilayaz.design/assets/images/headshot.svg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Karachi",
+      "addressCountry": "PK"
+    },
+    "sameAs": [
+      "https://github.com/aadilayaz",
+      "https://behance.net/aadilayaz",
+      "https://linkedin.com/in/aadilayaz"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="scroll-progress" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="index.html" class="nav-logo"><span class="regmark" aria-hidden="true"></span>Aadil Ayaz</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn--ghost">Start a project</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero container">
+      <div class="hero-plates" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="hero-inner">
+        <p class="eyebrow">Portfolio &middot; Karachi, Pakistan</p>
+        <div class="hero-role">
+          <span>Graphic Designer</span>
+          <span>Canva Template Creator</span>
+          <span>Brand Identity Designer</span>
+        </div>
+        <h1 class="text-balance">Design that stays <em>in register.</em></h1>
+        <p class="lede">I build clean, considered Canva templates and brand identities for founders, agencies and creators &mdash; the kind of design that looks effortless because every layer lines up.</p>
+        <div class="btn-row">
+          <a href="portfolio.html" class="btn btn--primary">View portfolio</a>
+          <a href="contact.html" class="btn btn--ghost">Start a project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FEATURED WORK ============================ -->
+    <section class="section" aria-labelledby="work-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2 id="work-heading">A few recent favourites</h2>
+          </div>
+          <a href="portfolio.html" class="btn btn--ghost">See full portfolio</a>
+        </div>
+        <div class="grid grid--3" data-reveal-group>
+          <article class="project-card" data-reveal style="--i:0">
+            <div class="project-thumb" style="--chip:#F2A93C;">
+              <img src="assets/images/luxury-brand-identity.svg" alt="Logo and colour palette exploration for a luxury brand identity project" loading="lazy" width="800" height="600">
+              <span class="chip-tag" style="--chip:#F2A93C;">Branding</span>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Brand Identity</span>
+              <h3>Luxury Brand Identity</h3>
+              <p>A refined mark, colour system and usage guidelines for a premium lifestyle label.</p>
+            </div>
+          </article>
+          <article class="project-card" data-reveal style="--i:1">
+            <div class="project-thumb" style="--chip:#E8336D;">
+              <img src="assets/images/instagram-carousel.svg" alt="Instagram carousel template set with consistent typography and layout" loading="lazy" width="800" height="600">
+              <span class="chip-tag" style="--chip:#E8336D;">Social</span>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Social Media</span>
+              <h3>Instagram Carousel Templates</h3>
+              <p>An editable Canva carousel system built for consistent, scroll-stopping content.</p>
+            </div>
+          </article>
+          <article class="project-card" data-reveal style="--i:2">
+            <div class="project-thumb" style="--chip:#2F4CFF;">
+              <img src="assets/images/business-presentation.svg" alt="Business presentation slide template with clean grid layout" loading="lazy" width="800" height="600">
+              <span class="chip-tag" style="--chip:#2F4CFF;">Presentation</span>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Presentation</span>
+              <h3>Business Presentation</h3>
+              <p>A flexible slide system designed for pitches, reports and investor decks.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ SKILLS ============================ -->
+    <section class="section section--paper-soft" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow">Capabilities</p>
+            <h2 id="skills-heading">What I design with</h2>
+          </div>
+          <p class="lede">Every skill below gets used on real client work, not listed for decoration.</p>
+        </div>
+        <div class="grid grid--4" data-reveal-group>
+          <div class="skill-card" data-reveal style="--i:0">
+            <div class="skill-card-top"><h3>Canva</h3><span class="skill-pct">97%</span></div>
+            <div class="gauge"><span style="--v:97%; --chip:#2F4CFF;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:1">
+            <div class="skill-card-top"><h3>Graphic Design</h3><span class="skill-pct">95%</span></div>
+            <div class="gauge"><span style="--v:95%; --chip:#E8336D;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:2">
+            <div class="skill-card-top"><h3>Brand Identity</h3><span class="skill-pct">93%</span></div>
+            <div class="gauge"><span style="--v:93%; --chip:#F2A93C;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:3">
+            <div class="skill-card-top"><h3>Typography</h3><span class="skill-pct">92%</span></div>
+            <div class="gauge"><span style="--v:92%; --chip:#1F9C8B;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:4">
+            <div class="skill-card-top"><h3>Presentation Design</h3><span class="skill-pct">94%</span></div>
+            <div class="gauge"><span style="--v:94%; --chip:#2F4CFF;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:5">
+            <div class="skill-card-top"><h3>Social Media Design</h3><span class="skill-pct">96%</span></div>
+            <div class="gauge"><span style="--v:96%; --chip:#E8336D;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:0">
+            <div class="skill-card-top"><h3>Print Design</h3><span class="skill-pct">90%</span></div>
+            <div class="gauge"><span style="--v:90%; --chip:#F2A93C;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:1">
+            <div class="skill-card-top"><h3>Marketing Design</h3><span class="skill-pct">91%</span></div>
+            <div class="gauge"><span style="--v:91%; --chip:#1F9C8B;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:2">
+            <div class="skill-card-top"><h3>Layout Design</h3><span class="skill-pct">93%</span></div>
+            <div class="gauge"><span style="--v:93%; --chip:#2F4CFF;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:3">
+            <div class="skill-card-top"><h3>Visual Identity</h3><span class="skill-pct">92%</span></div>
+            <div class="gauge"><span style="--v:92%; --chip:#E8336D;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:4">
+            <div class="skill-card-top"><h3>Adobe Illustrator</h3><span class="skill-pct">88%</span></div>
+            <div class="gauge"><span style="--v:88%; --chip:#F2A93C;"></span></div>
+          </div>
+          <div class="skill-card" data-reveal style="--i:5">
+            <div class="skill-card-top"><h3>Adobe Photoshop</h3><span class="skill-pct">87%</span></div>
+            <div class="gauge"><span style="--v:87%; --chip:#1F9C8B;"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ WHY CHOOSE ME ============================ -->
+    <section class="section section--ink" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow">Why work with me</p>
+            <h2 id="why-heading">Design you can hand straight to your audience</h2>
+          </div>
+        </div>
+        <div class="grid grid--3" data-reveal-group>
+          <div class="value-card" data-reveal style="--i:0">
+            <span class="regmark" aria-hidden="true"></span>
+            <h3>Creative thinking</h3>
+            <p>Every brief starts with a question worth answering, not a template to fill in.</p>
+          </div>
+          <div class="value-card" data-reveal style="--i:1">
+            <span class="regmark" aria-hidden="true"></span>
+            <h3>Attention to detail</h3>
+            <p>Spacing, alignment and colour are checked until every layer sits exactly in place.</p>
+          </div>
+          <div class="value-card" data-reveal style="--i:2">
+            <span class="regmark" aria-hidden="true"></span>
+            <h3>Clean, usable design</h3>
+            <p>Layouts built for the person editing them, not just for how they look in a preview.</p>
+          </div>
+          <div class="value-card" data-reveal style="--i:3">
+            <span class="regmark" aria-hidden="true"></span>
+            <h3>Consistency</h3>
+            <p>Colour, type and spacing stay disciplined across an entire template set or brand system.</p>
+          </div>
+          <div class="value-card" data-reveal style="--i:4">
+            <span class="regmark" aria-hidden="true"></span>
+            <h3>Professional quality</h3>
+            <p>Clear communication and polished, on-time delivery on every single project.</p>
+          </div>
+          <div class="value-card" data-reveal style="--i:5">
+            <span class="regmark" aria-hidden="true"></span>
+            <h3>User-focused layouts</h3>
+            <p>Structure that guides the eye first, then gets dressed up &mdash; never the other way round.</p>
+          </div>
+        </div>
+
+        <hr class="rule" style="border-top-color: var(--ink-line);">
+
+        <div class="stat-row" data-reveal-group>
+          <div class="stat-block" data-reveal style="--i:0">
+            <span class="stat-num">120+</span>
+            <span class="stat-label">Projects delivered</span>
+          </div>
+          <div class="stat-block" data-reveal style="--i:1">
+            <span class="stat-num">60+</span>
+            <span class="stat-label">Happy clients</span>
+          </div>
+          <div class="stat-block" data-reveal style="--i:2">
+            <span class="stat-num">35+</span>
+            <span class="stat-label">Canva templates published</span>
+          </div>
+          <div class="stat-block" data-reveal style="--i:3">
+            <span class="stat-num">4+</span>
+            <span class="stat-label">Years of experience</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ TESTIMONIALS ============================ -->
+    <section class="section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow">Testimonials</p>
+            <h2 id="testimonials-heading">Placeholder feedback</h2>
+          </div>
+        </div>
+        <p class="lede" data-reveal style="margin-bottom: var(--space-4);">These quotes are placeholders written for layout purposes and will be replaced with real client feedback.</p>
+        <div class="testimonial-track" data-reveal>
+          <blockquote class="testimonial-card">
+            <p class="testimonial-quote">&ldquo;Our Canva templates finally look like they belong to one brand. Aadil turned a messy set of files into a system our whole team can use.&rdquo;</p>
+            <div class="testimonial-who">
+              <span class="avatar-chip" style="--chip:#2F4CFF;">EC</span>
+              <div><strong>Placeholder client</strong><span>E-commerce founder</span></div>
+            </div>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p class="testimonial-quote">&ldquo;Fast, clear communication and a presentation deck that made our pitch look twice the budget it actually was.&rdquo;</p>
+            <div class="testimonial-who">
+              <span class="avatar-chip" style="--chip:#E8336D;">MK</span>
+              <div><strong>Placeholder client</strong><span>Marketing agency lead</span></div>
+            </div>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p class="testimonial-quote">&ldquo;Genuinely one of the more detail-oriented designers we&rsquo;ve worked with. Nothing needed a second round of revisions.&rdquo;</p>
+            <div class="testimonial-who">
+              <span class="avatar-chip" style="--chip:#F2A93C;">RS</span>
+              <div><strong>Placeholder client</strong><span>Restaurant owner</span></div>
+            </div>
+          </blockquote>
+        </div>
+        <div class="track-controls">
+          <button class="track-btn" data-track-prev aria-label="Previous testimonial">&larr;</button>
+          <button class="track-btn" data-track-next aria-label="Next testimonial">&rarr;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT PREVIEW ============================ -->
+    <section class="section section--ink" aria-labelledby="contact-preview-heading">
+      <div class="container">
+        <div class="grid grid--2" data-reveal-group style="align-items:center;">
+          <div data-reveal style="--i:0">
+            <p class="eyebrow">Let&rsquo;s talk</p>
+            <h2 id="contact-preview-heading" class="text-balance">Have a project in mind?</h2>
+            <p class="lede">Whether it&rsquo;s a full brand identity or a single Canva template, I&rsquo;d love to hear what you&rsquo;re building.</p>
+            <div class="btn-row" style="margin-top: var(--space-3);">
+              <a href="contact.html" class="btn btn--primary">Get in touch</a>
+              <a href="mailto:hello@aadilayaz.design" class="btn btn--ghost">hello@aadilayaz.design</a>
+            </div>
+          </div>
+          <div data-reveal style="--i:1">
+            <div class="stat-row" style="grid-template-columns:1fr 1fr;">
+              <div class="stat-block">
+                <span class="stat-num">24h</span>
+                <span class="stat-label">Typical reply time</span>
+              </div>
+              <div class="stat-block">
+                <span class="stat-num">PK</span>
+                <span class="stat-label">Based in Karachi, works worldwide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><span class="regmark" aria-hidden="true"></span>Aadil Ayaz</a>
+          <p>Graphic designer and Canva template creator based in Karachi, Pakistan, working with founders, agencies and creators worldwide.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Site</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Elsewhere</h4>
+            <a href="https://github.com/aadilayaz" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://behance.net/aadilayaz" target="_blank" rel="noopener">Behance</a>
+            <a href="https://linkedin.com/in/aadilayaz" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="mailto:hello@aadilayaz.design">hello@aadilayaz.design</a>
+            <span>Karachi, Pakistan</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Aadil Ayaz. All rights reserved.</span>
+        <span>Built with HTML, CSS &amp; JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">&uarr;</button>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
